@@ -1,25 +1,107 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="space_age" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculation Goes Here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Fh-Hf-Ttb">
+                                <rect key="frame" x="20" y="438" width="280" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="5l9-dk-d6q"/>
+                                    <constraint firstAttribute="height" constant="80" id="Q3R-Fe-YAJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.72941176470000002" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTp-6s-DI3">
+                                <rect key="frame" x="88" y="386" width="144" height="44"/>
+                                <color key="backgroundColor" red="1" green="0.99215686274509807" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
+                                <state key="normal" title="Calculate!">
+                                    <color key="titleColor" red="0.1803921568627451" green="0.1803921568627451" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showCalculation" destination="BYZ-38-t0r" eventType="touchUpInside" id="b4A-6J-Fh4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Enter Your Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgS-lK-MnG">
+                                <rect key="frame" x="73" y="39" width="174" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="CXi-ub-0YG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.72941176470000002" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4o-R0-33C">
+                                <rect key="frame" x="0.0" y="138" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Gb2-NQ-nJ9"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="LXm-fe-avt"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick A Planet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0z-6k-weZ">
+                                <rect key="frame" x="57" y="138" width="206" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="206" id="0IN-Qb-T4m"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="DWd-w3-tQz"/>
+                                    <constraint firstAttribute="height" constant="26" id="PrZ-2y-ihn"/>
+                                    <constraint firstAttribute="width" constant="206" id="zf1-6K-ogk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.72941176470000002" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cat-NT-6ks">
+                                <rect key="frame" x="129" y="68" width="58" height="30"/>
+                                <color key="textColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="L4o-R0-33C" firstAttribute="centerX" secondItem="3Fh-Hf-Ttb" secondAttribute="centerX" id="3Iv-it-Rcw"/>
+                            <constraint firstItem="j0z-6k-weZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BQx-J0-z6f"/>
+                            <constraint firstItem="RTp-6s-DI3" firstAttribute="top" secondItem="L4o-R0-33C" secondAttribute="bottom" constant="32" id="Itp-ar-0dP"/>
+                            <constraint firstItem="L4o-R0-33C" firstAttribute="centerX" secondItem="vgS-lK-MnG" secondAttribute="centerX" id="JFg-Qa-ryF"/>
+                            <constraint firstItem="vgS-lK-MnG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="57" id="Lka-OV-3uY"/>
+                            <constraint firstItem="j0z-6k-weZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="118" id="MBk-gN-9Fc"/>
+                            <constraint firstItem="L4o-R0-33C" firstAttribute="top" secondItem="cat-NT-6ks" secondAttribute="bottom" constant="40" id="Pxm-UH-9iM"/>
+                            <constraint firstItem="j0z-6k-weZ" firstAttribute="centerX" secondItem="cat-NT-6ks" secondAttribute="centerX" id="R2m-Cx-S0l"/>
+                            <constraint firstItem="L4o-R0-33C" firstAttribute="centerX" secondItem="cat-NT-6ks" secondAttribute="centerX" id="Vda-3g-q3G"/>
+                            <constraint firstItem="j0z-6k-weZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="118" id="aBj-eA-4PE"/>
+                            <constraint firstItem="RTp-6s-DI3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dBI-sz-KNs"/>
+                            <constraint firstItem="3Fh-Hf-Ttb" firstAttribute="top" secondItem="RTp-6s-DI3" secondAttribute="bottom" constant="8" symbolic="YES" id="ixt-Sw-HM4"/>
+                            <constraint firstItem="3Fh-Hf-Ttb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q0p-aT-26M"/>
+                            <constraint firstItem="cat-NT-6ks" firstAttribute="top" secondItem="vgS-lK-MnG" secondAttribute="bottom" constant="8" symbolic="YES" id="rIQ-Wt-2nm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3Fh-Hf-Ttb" secondAttribute="bottom" constant="50" id="uie-1l-9hr"/>
+                            <constraint firstItem="RTp-6s-DI3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="72" id="x6r-Wl-lv1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ageInput" destination="cat-NT-6ks" id="qUj-cy-Y4p"/>
+                        <outlet property="calculationLabel" destination="3Fh-Hf-Ttb" id="5FC-Xy-ZCN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="162" y="307"/>
         </scene>
     </scenes>
 </document>
